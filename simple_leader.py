@@ -18,7 +18,7 @@ class SimpleLeader(Leader):
         self.follower_data = np.array([])
         self.reg = LinearRegression()
         # If you want to initialize something here, do it before the super() call.
-        super()._init_(name)
+        super().__init__(name)
 
 
     def load_historical_data(self):
