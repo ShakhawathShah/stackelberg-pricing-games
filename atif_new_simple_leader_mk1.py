@@ -1,10 +1,10 @@
 import numpy as np
-import random
 from scipy.optimize import minimize_scalar, minimize
-from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_percentage_error
 from base_leader import Leader
+from sklearn.linear_model import Ridge
+
 
 
 __author__ = "Rokas"
@@ -32,7 +32,12 @@ class SimpleLeader(Leader):
         self.log("Start of simulation")
 
         self.load_historical_data()
+    
+        # Initialize Ridge regression model with regularization parameter alpha
+        alpha = 0.01  # You can adjust the value of alpha
+        self.reg = Ridge(alpha=alpha)
 
+        # Fit Ridge regression model with regularization
         self.reg.fit(self.profit(self.leader_data, self.follower_data).reshape(-1, 1), self.follower_data)
 
     def end_simulation(self):
@@ -61,8 +66,8 @@ class SimpleLeader(Leader):
         return res.x
 
     def window_o(self, weight, date):
-        window_size = 8
-        if date < 8:
+        window_size = 11
+        if date < 11:
             window_size = date
         weights = np.array([1, weight])
         sum = 0
@@ -88,20 +93,20 @@ class SimpleLeader(Leader):
         B = self.reg.intercept_
 
         def profit_ul(x):
-            part1 = (-A*x**2) + (3*A*x) - (2*A) + B
+            part1 = (-A*x**2)+(3*A*x)-(2*A)+B
             part2 = 1 - 0.3*A*x + 0.3*A
-            part3 = part1 / part2
+            part3 = part1/part2
             part4 = 2 - x + 0.3 * part3
             return ((x - 1) * part4)
-
+        
         # Define the profit function to be minimized
         def neg_profit(x):
             return -profit_ul(x)
 
-        # Use Bounded method for optimization
-        result = minimize_scalar(neg_profit, method='bounded', bounds=(1, 2))
+        # Use Nelder-Mead method for optimization
+        result = minimize(neg_profit, x0=1.4, method='Nelder-Mead', bounds=[(1, 2)])
 
-        price = result.x  # Extract the optimized price
+        price = result.x[0]  # Extract the optimized price
 
         self.date = date
 

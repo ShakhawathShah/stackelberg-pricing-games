@@ -16,9 +16,10 @@ Stackelberg pricing games
 
 # New Profit
 
-- MK1: 17.6190364 (Using simple_leader_MK1)
+- MK1: 17.6274169867196 (Using simple_leader_MK1, added in regularization)
+  - 17.628998148857 (Using atif_new_simple_leader_mk1, changed alpha value used for regularization)
 - MK2: 18.580049499613 (Window 15 and Nelder-Mead method for optimization x0 1.4)
-- MK3: 12.2610056 (Window size 5)
+- MK3: 12.2610242287692 (Window size 8)
 
 # Other Group Profit
 
