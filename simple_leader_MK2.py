@@ -98,7 +98,7 @@ class SimpleLeader(Leader):
             return -profit_ul(x)
 
         # Use Nelder-Mead method for optimization
-        result = minimize(neg_profit, x0=1.5, method='Nelder-Mead', bounds=[(1, 2)])
+        result = minimize(neg_profit, x0=1.4, method='Nelder-Mead', bounds=[(1, 2)])
 
         price = result.x[0]  # Extract the optimized price
 
