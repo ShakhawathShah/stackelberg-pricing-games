@@ -14,15 +14,34 @@ Stackelberg pricing games
 - MK2: 18.4993660039686
 - MK3: 12.2606605197795
 
-# New Profit
+# Our Best Profits
 
-- MK1: 17.6274169867196 (Using simple_leader_MK1, added in regularization)
-  - 17.628998148857 (Using atif_new_simple_leader_mk1, changed alpha value used for regularization)
-- MK2: 18.580049499613 (Window 15 and Nelder-Mead method for optimization x0 1.4)
-- MK3: 12.2610242287692 (Window size 8)
+
+- MK1: 17.628998148857
+  - File: simple_leader_MK1.py
+  - Method: Linear + Window + Nelder-Mead Optimisation + Regularisation 
+  - Parameters: window=11, x0=1.4, alpha=0.01
+
+
+- MK2: 18.580049499613
+  - File: simple_leader_MK2.py
+  - Method: Linear + Window + Nelder-Mead Optimisation
+  - Parameters: window=15, x0=1.4
+
+
+- MK3: 12.2610242287692
+  - File: simple_leader_MK3.py
+  - Method: Linear + Window + Bounded Optimisation
+  - Parameters: window=8,
 
 # Other Group Profit
 
 - MK1: 17.6257822150468
 - MK2: 18.5928142778606
 - MK3: 12.2688225571899
+
+# Other Test File Profits
+- MK1: 17.6274169867196 
+  - File: simple_leader_MK1_atif.py
+  - Method: Polynomial + Nelder-Mead Optimisation + Regularisation 
+  - Parameters: x0=1.4, alpha=0.01
