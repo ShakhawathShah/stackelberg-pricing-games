@@ -1,7 +1,6 @@
 import numpy as np
 import random
 from scipy.optimize import minimize_scalar, minimize
-from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_percentage_error
 from base_leader import Leader
@@ -76,6 +75,7 @@ class SimpleLeader(Leader):
     def new_price(self, date: int) -> float:
         """
         A function for setting the new price of each day.
+
         :param date: date of the day to be updated
         :return: (float) price for the day
         """
@@ -92,9 +92,15 @@ class SimpleLeader(Leader):
             part3 = part1/part2
             part4 = 2 - x + 0.3 * part3
             return ((x - 1) * part4)
+        
+        # Define the profit function to be minimized
+        def neg_profit(x):
+            return -profit_ul(x)
 
-        price = minimize_scalar(
-            lambda x: -profit_ul(x), method="Bounded", bounds=(1, 2)).x
+        # Use Nelder-Mead method for optimization
+        result = minimize(neg_profit, x0=1.5, method='Nelder-Mead', bounds=[(1, 2)])
+
+        price = result.x[0]  # Extract the optimized price
 
         self.date = date
 

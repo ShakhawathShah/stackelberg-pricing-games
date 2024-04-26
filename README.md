@@ -2,7 +2,7 @@
 
 Stackelberg pricing games
 
-# Random Profit 
+# Random Profit
 
 - MK1: 17.5863496878102
 - MK2: 18.2783504129443
@@ -17,10 +17,10 @@ Stackelberg pricing games
 # New Profit
 
 - MK1: 17.6190364 (Using simple_leader_MK1)
-- MK2: 18.49937872 (Window 15)
+- MK2: 18.49937982 (Window 15 and Nelder-Mead method for optimization)
 - MK3: 12.2610056 (Window size 5)
 
-# Other Group Profit 
+# Other Group Profit
 
 - MK1: 17.6257822150468
 - MK2: 18.5928142778606
