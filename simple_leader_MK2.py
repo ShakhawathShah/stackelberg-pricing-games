@@ -1,8 +1,7 @@
 import numpy as np
 import random
 from scipy.optimize import minimize_scalar, minimize
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_absolute_percentage_error
+from sklearn.linear_model import HuberRegressor, LinearRegression, Ridge
 from base_leader import Leader
 
 
@@ -15,7 +14,7 @@ class SimpleLeader(Leader):
         self.model_weight = np.array([])
         self.leader_data = np.array([])
         self.follower_data = np.array([])
-        self.reg = LinearRegression()
+        self.reg = HuberRegressor(epsilon=1)
         # If you want to initialize something here, do it before the super() call.
         super().__init__(name)
 
@@ -32,6 +31,11 @@ class SimpleLeader(Leader):
 
         self.load_historical_data()
 
+        # # Initialize Ridge regression model with regularization parameter alpha
+        # alpha = 0.01  # You can adjust the value of alpha
+        # self.reg = Ridge(alpha=alpha)
+
+        # Fit Ridge regression model with regularization
         self.reg.fit(self.profit(self.leader_data, self.follower_data).reshape(-1, 1), self.follower_data)
 
     def end_simulation(self):

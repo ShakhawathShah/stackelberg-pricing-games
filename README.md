@@ -23,7 +23,7 @@ Stackelberg pricing games
   - Parameters: window=11, x0=1.4, alpha=0.01
 
 
-- MK2: 18.580049499613
+- MK2: 18.5801916811093
   - File: simple_leader_MK2.py
   - Method: Linear + Window + Nelder-Mead Optimisation
   - Parameters: window=15, x0=1.4
