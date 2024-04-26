@@ -25,8 +25,8 @@ Stackelberg pricing games
 
 - MK2: 18.5801916811093
   - File: simple_leader_MK2.py
-  - Method: Linear + Window + Nelder-Mead Optimisation
-  - Parameters: window=15, x0=1.4
+  - Method: HuberRegressor + Window + Nelder-Mead Optimisation
+  - Parameters: epsilon=1, window=15, x0=1.4
 
 
 - MK3: 12.2610242287692
