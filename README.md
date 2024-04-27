@@ -17,7 +17,7 @@ Stackelberg pricing games
 # Our Best Profits
 
 
-- MK1: 17.628998148857
+- MK1: 17.6308351938507
   - File: simple_leader_MK1.py
   - Method: Linear + Window + Nelder-Mead Optimisation + Regularisation 
   - Parameters: window=11, x0=1.4, alpha=0.01

@@ -89,6 +89,12 @@ class SimpleLeader(Leader):
 
         self.update_prediction(date)
 
+        alpha = 0.01  # You can adjust the value of alpha
+        self.reg = Ridge(alpha=alpha)
+
+        # Fit Ridge regression model with regularization
+        self.reg.fit(self.profit(self.leader_data, self.follower_data).reshape(-1, 1), self.follower_data)
+
         A = self.reg.coef_[0]
         B = self.reg.intercept_
 
