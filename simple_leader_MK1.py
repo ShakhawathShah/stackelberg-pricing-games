@@ -16,7 +16,8 @@ class SimpleLeader(Leader):
         self.model_weight = np.array([])
         self.leader_data = np.array([])
         self.follower_data = np.array([])
-        self.reg = LinearRegression()
+        alpha = 0.01  # You can adjust the value of alpha
+        self.reg = Ridge(alpha=alpha)
         # If you want to initialize something here, do it before the super() call.
         super().__init__(name)
 
@@ -88,9 +89,6 @@ class SimpleLeader(Leader):
         self.log(date)
 
         self.update_prediction(date)
-
-        alpha = 0.01  # You can adjust the value of alpha
-        self.reg = Ridge(alpha=alpha)
 
         # Fit Ridge regression model with regularization
         self.reg.fit(self.profit(self.leader_data, self.follower_data).reshape(-1, 1), self.follower_data)

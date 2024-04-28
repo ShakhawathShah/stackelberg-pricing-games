@@ -16,20 +16,20 @@ Stackelberg pricing games
 
 # Our Best Profits
 
-
 - MK1: 17.6308351938507
+
   - File: simple_leader_MK1.py
-  - Method: Linear + Window + Nelder-Mead Optimisation + Regularisation 
+  - Method: Linear + Window + Nelder-Mead Optimisation + Regularisation
   - Parameters: window=11, x0=1.4, alpha=0.01
 
+- MK2: 18.5801916811233
 
-- MK2: 18.5801916811093
   - File: simple_leader_MK2.py
   - Method: HuberRegressor + Window + Nelder-Mead Optimisation
-  - Parameters: epsilon=1, window=15, x0=1.4
-
+  - Parameters: epsilon=1, window=15, x0=1.41
 
 - MK3: 12.2610242287692
+
   - File: simple_leader_MK3.py
   - Method: Linear + Window + Bounded Optimisation
   - Parameters: window=8,
@@ -41,7 +41,8 @@ Stackelberg pricing games
 - MK3: 12.2688225571899
 
 # Other Test File Profits
-- MK1: 17.6274169867196 
+
+- MK1: 17.6274169867196
   - File: simple_leader_MK1_atif.py
-  - Method: Polynomial + Nelder-Mead Optimisation + Regularisation 
+  - Method: Polynomial + Nelder-Mead Optimisation + Regularisation
   - Parameters: x0=1.4, alpha=0.01
