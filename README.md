@@ -24,26 +24,32 @@ Stackelberg pricing games
 
 - MK2: 18.5801916811233
 
+  - Window 12 18.5801940112758
+  - Window 13 18.5801932489796
+  - Window 15 18.5801916811233
+  - Window 17 18.5801902489796
+
   - File: simple_leader_MK2.py
   - Method: HuberRegressor + Window + Nelder-Mead Optimisation
   - Parameters: epsilon=1, window=15, x0=1.41
 
 - MK3: 12.269651221109
-  Window 7: 12.2688237804767
-  Window 9: 12.2688237804767
-  Window 8: 12.268894324174
-  Window 10: 12.2695201179103
-  Window 11: 12.2692680826705
-  Window 15: 12.269651221109
-  Window 20: 12.2692346528657
 
-  Huber: 11.8196864450257
-  Ridge: 12.269651221109
-  Linear: 12.2636605197795
+  - Window 7: 12.2688237804767
+  - Window 9: 12.2688237804767
+  - Window 8: 12.268894324174
+  - Window 10: 12.2695201179103
+  - Window 11: 12.2692680826705
+  - Window 15: 12.269651221109
+  - Window 20: 12.2692346528657
 
-  Bounded: 12.269651221109
-  Nelder-mead: 12.0984153451731
-  Powell: 12.2692359877081
+  - Huber: 11.8196864450257
+  - Ridge: 12.269651221109
+  - Linear: 12.2636605197795
+
+  - Bounded: 12.269651221109
+  - Nelder-mead: 12.0984153451731
+  - Powell: 12.2692359877081
 
   - File: simple_leader_MK3.py
   - Method: Linear + Window + Bounded Optimisation + Regularisation
