@@ -28,10 +28,10 @@ Stackelberg pricing games
   - Method: HuberRegressor + Window + Nelder-Mead Optimisation
   - Parameters: epsilon=1, window=15, x0=1.41
 
-- MK3: 12.2610242287692
+- MK3: 12.268894324174
 
   - File: simple_leader_MK3.py
-  - Method: Linear + Window + Bounded Optimisation
+  - Method: Linear + Window + Bounded Optimisation + Regularisation
   - Parameters: window=8,
 
 # Other Group Profit

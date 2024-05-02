@@ -2,7 +2,7 @@ import numpy as np
 import random
 from scipy.optimize import minimize_scalar, minimize
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.metrics import mean_absolute_percentage_error
 from base_leader import Leader
 
@@ -16,7 +16,7 @@ class SimpleLeader(Leader):
         self.model_weight = np.array([])
         self.leader_data = np.array([])
         self.follower_data = np.array([])
-        self.reg = LinearRegression()
+        self.reg = Ridge(0.01)
         # If you want to initialize something here, do it before the super() call.
         super().__init__(name)
 
