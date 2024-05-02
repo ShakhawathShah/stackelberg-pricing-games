@@ -64,8 +64,8 @@ class SimpleLeader(Leader):
         return res.x
 
     def window_o(self, weight, date):
-        window_size = 15
-        if date < 15:
+        window_size = 12
+        if date < 12:
             window_size = date
         weights = np.array([1, weight])
         sum = 0
