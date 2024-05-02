@@ -36,6 +36,15 @@ Stackelberg pricing games
   Window 11: 12.2692680826705
   Window 15: 12.269651221109
   Window 20: 12.2692346528657
+
+  Huber: 11.8196864450257
+  Ridge: 12.269651221109
+  Linear: 12.2636605197795
+
+  Bounded: 12.269651221109
+  Nelder-mead: 12.0984153451731
+  Powell: 12.2692359877081
+
   - File: simple_leader_MK3.py
   - Method: Linear + Window + Bounded Optimisation + Regularisation
   - Parameters: window=15,
