@@ -9,7 +9,7 @@ from base_leader import Leader
 
 __author__ = "Rokas"
 
-class SimpleLeader(Leader):
+class SimpleLeaderMK3(Leader):
 
     def __init__(self, name):
         self.data_size = 100
@@ -110,4 +110,4 @@ class SimpleLeader(Leader):
 
 if __name__ == '__main__':
     # Make sure you set this to your group number!
-    SimpleLeader('12')
+    SimpleLeaderMK3('12')
