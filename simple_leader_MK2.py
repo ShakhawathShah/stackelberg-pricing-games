@@ -1,7 +1,6 @@
 import numpy as np
-import random
 from scipy.optimize import minimize_scalar, minimize
-from sklearn.linear_model import HuberRegressor, LinearRegression, Ridge
+from sklearn.linear_model import HuberRegressor
 from base_leader import Leader
 
 
@@ -30,10 +29,6 @@ class SimpleLeaderMK2(Leader):
         self.log("Start of simulation")
 
         self.load_historical_data()
-
-        # # Initialize Ridge regression model with regularization parameter alpha
-        # alpha = 0.01  # You can adjust the value of alpha
-        # self.reg = Ridge(alpha=alpha)
 
         # Fit Ridge regression model with regularization
         self.reg.fit(self.profit(self.leader_data, self.follower_data).reshape(-1, 1), self.follower_data)
@@ -104,7 +99,7 @@ class SimpleLeaderMK2(Leader):
         # Use Nelder-Mead method for optimization
         result = minimize(neg_profit, x0=1.413, method='Nelder-Mead', bounds=[(1, 2)])
 
-        price = result.x[0]  # Extract the optimized price
+        price = result.x[0]
 
         self.date = date
 

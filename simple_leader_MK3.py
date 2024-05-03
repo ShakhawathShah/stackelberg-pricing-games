@@ -1,9 +1,6 @@
 import numpy as np
-import random
-from scipy.optimize import minimize_scalar, minimize
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LinearRegression, Ridge
-from sklearn.metrics import mean_absolute_percentage_error
+from scipy.optimize import minimize_scalar
+from sklearn.linear_model import Ridge
 from base_leader import Leader
 
 
